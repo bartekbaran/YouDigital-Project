@@ -21,8 +21,7 @@ public class WordController {
 
     @DeleteMapping("/words/{id}")
     public void deleteWordById(@PathVariable long id) {
-        long checkedId = id >= 0 ? id : 0;
-        wordService.deleteWordById(checkedId);
+        wordService.deleteWordById(id);
     }
 
     @GetMapping("/words/count/{word}")
@@ -44,7 +43,6 @@ public class WordController {
 
     @GetMapping("/words/{id}")
     public Word getSingleWord(@PathVariable long id) {
-        long checkedId = id >= 0 ? id : 0;
-        return wordService.getSingleWord(checkedId);
+        return wordService.getSingleWord(id);
     }
 }
